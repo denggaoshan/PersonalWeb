@@ -71,7 +71,7 @@
     <Content Include="img\button-cross.png" />
     <Content Include="img\empty.jpg" />
     <Content Include="Login.aspx" />
-    <Content Include="MainWeb.aspx" />
+    <Content Include="Valid.aspx" />
     <Content Include="Person.aspx" />
     <Content Include="UploadFile.aspx" />
     <Content Include="ValidError.aspx" />
@@ -92,12 +92,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MainWeb.aspx.cs">
-      <DependentUpon>MainWeb.aspx</DependentUpon>
+    <Compile Include="Valid.aspx.cs">
+      <DependentUpon>Valid.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MainWeb.aspx.designer.cs">
-      <DependentUpon>MainWeb.aspx</DependentUpon>
+    <Compile Include="Valid.aspx.designer.cs">
+      <DependentUpon>Valid.aspx</DependentUpon>
     </Compile>
     <Compile Include="Person.aspx.cs">
       <DependentUpon>Person.aspx</DependentUpon>

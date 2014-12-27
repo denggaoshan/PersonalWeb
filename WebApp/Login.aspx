@@ -18,7 +18,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="line"></div>
-             <form id="login" action="./MainWeb.aspx" method="get">
+             <form id="login" action="./Valid.aspx" method="get">
                 <span><input id="user" name="user"/></span>
                 <span><input type="password" id="psw" name="psw"/></span>
                  <div class="clearfix"></div>
