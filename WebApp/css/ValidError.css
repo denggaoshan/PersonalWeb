@@ -1,0 +1,11 @@
+﻿.tips {
+    background-image: url('/img/button-cross.png');
+}
+
+p {
+    font-family: 微软雅黑;
+    text-align: center;
+    color: red;
+    font-size: 30px;
+}
+

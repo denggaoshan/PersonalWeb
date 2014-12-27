@@ -13,7 +13,16 @@ namespace WebApp
         {
             var name = Request.QueryString["user"];
             var psw = Request.QueryString["psw"];
-                
+            
+            //验证用户名密码：
+            if (name == "denggaoshan" && psw == "5610201")
+            {
+                Response.Redirect("./Person.aspx", false);
+            }
+            else
+            {
+                Response.Redirect("ValidError.aspx", false); 
+            }
         }
     }
 }
