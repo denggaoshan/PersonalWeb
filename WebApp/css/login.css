@@ -1,0 +1,52 @@
+﻿.head_logo
+{
+    padding:0px;
+    margin:10px 20px 20px 20px;
+    font-size:5em;
+    border-style:solid;
+    font-style:微软雅黑;
+    color:Orange;
+    text-align:center;
+}
+
+.main_box2395
+{
+    width:70%;
+    margin:10px auto 20px auto;
+    padding:10px;
+    background-color:#EDEDED;
+    text-align:center;
+}
+
+.main_box2395_head p
+{
+    float:right;
+}
+
+.clearfix
+{
+    clear:both;
+}
+
+.main_box2395 input
+{
+    width:90%;
+    height:2em;
+    margin:10px 0;
+    background-color:Gray;
+}
+
+.bt
+{
+    margin :10px auto 0 auto;
+    width:90%;
+    background-color:#2a80d6;
+}
+
+.line
+{
+    background-color:Green;
+    width:100%;
+    height:2px;
+}
+

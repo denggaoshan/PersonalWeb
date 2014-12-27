@@ -1,0 +1,10 @@
+﻿body 
+{
+    background-image:url('/img/bg-pattern.png')
+}
+
+.wrapper
+{
+    width: 500px;
+    margin: auto auto
+}
