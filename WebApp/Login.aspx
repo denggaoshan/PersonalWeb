@@ -18,9 +18,9 @@
             </div>
             <div class="clearfix"></div>
             <div class="line"></div>
-             <form action="#">
-                <span><input id="username"/></span>
-                <span><input id="password"/></span>
+             <form id="login" action="./MainWeb.aspx" method="get">
+                <span><input id="user" name="user"/></span>
+                <span><input type="password" id="psw" name="psw"/></span>
                  <div class="clearfix"></div>
                  <div class="line"></div>
                 <button class="bt">确定</button>
