@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="DataLinkDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="password" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo" Member="UserInfo">
+    <Type Name="UserInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="lastIP" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="lastTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[File]" Member="File">
+    <Type Name="File">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="fileName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="fileContent" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
