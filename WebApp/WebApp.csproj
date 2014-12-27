@@ -65,6 +65,7 @@
     <Content Include="css\master.css" />
     <Content Include="css\person.css" />
     <Content Include="img\bg-pattern.png" />
+    <Content Include="img\empty.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MainWeb.aspx" />
     <Content Include="Person.aspx" />

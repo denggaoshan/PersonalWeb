@@ -1,11 +1,11 @@
 ﻿body {
-    margin: 0px;
+    margin: 0px 0px 100px 0px;
 }
 
 header {
     margin: 0px;
     padding: 30px;
-    height: 100px;
+    height: 45px;
 }
 
 header strong {
@@ -54,13 +54,33 @@ a:hover {
 }
 
 .content {
-    
+    padding: 30px 0 0 50px;
+}
+
+.clearfix {
+    clear: both;
 }
 
 .content .left {
-    
+    float: left;
+    border-style: ridge;
+    width: 25%;
+    text-align: center;
 }
 
 .content .right {
+    border: solid;
+    border-width: 1px;
+    border-color: steelblue;
+    margin-left: 45px;
+    padding-left: 60px;
+    padding-top: 20px;
+    width: 60%;
+    float: left;
     
+}
+
+.right p {
+    margin: 10px 0px 5px 0px;
+    font-weight: bold;
 }
