@@ -11,6 +11,7 @@
     <title>主页</title>
 </head>
 <body>
+    <form id="form1" runat="server">
    <header>
        <strong>XXX,欢迎</strong>
    </header>
@@ -45,9 +46,12 @@
                 <a href="#">删除</a>
             </li>
         </ul>
-        <div class="clearfix"></div>
-        <button>上传文件</button>
+        <div class="clearfix"/>
+         <asp:FileUpload ID="FileUpload1" runat="server" />
+         <button runat="server">上传</button>
     </div>
+       
+    </form>
 
 </body>
 </html>
