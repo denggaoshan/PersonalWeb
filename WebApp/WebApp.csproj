@@ -63,9 +63,11 @@
   <ItemGroup>
     <Content Include="css\login.css" />
     <Content Include="css\master.css" />
+    <Content Include="css\person.css" />
     <Content Include="img\bg-pattern.png" />
     <Content Include="Login.aspx" />
     <Content Include="MainWeb.aspx" />
+    <Content Include="Person.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,6 +77,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,6 +91,13 @@
     </Compile>
     <Compile Include="MainWeb.aspx.designer.cs">
       <DependentUpon>MainWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Person.aspx.cs">
+      <DependentUpon>Person.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Person.aspx.designer.cs">
+      <DependentUpon>Person.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
