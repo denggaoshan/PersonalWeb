@@ -54,7 +54,7 @@ namespace WebApp
                 FileUpload1.PostedFile.SaveAs(path);
             }
 
-            Response.Redirect("Person.aspx", true); 
+            Response.Redirect("UploadFile.aspx", true); 
         }
     }
 }
