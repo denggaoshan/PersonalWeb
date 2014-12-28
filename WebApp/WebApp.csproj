@@ -70,12 +70,14 @@
     <Content Include="css\login.css" />
     <Content Include="css\master.css" />
     <Content Include="css\person.css" />
+    <Content Include="css\register.css" />
     <Content Include="css\uploadfile.css" />
     <Content Include="css\ValidError.css" />
     <Content Include="img\bg-pattern.png" />
     <Content Include="img\button-cross.png" />
     <Content Include="img\empty.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Valid.aspx" />
     <Content Include="Person.aspx" />
     <Content Include="UploadFile.aspx" />
@@ -100,6 +102,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Valid.aspx.cs">
       <DependentUpon>Valid.aspx</DependentUpon>

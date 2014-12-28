@@ -7,14 +7,14 @@
     <title>登录界面</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/master.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="head_logo">请 登 录</div>
         <div class="main_box2395">
             <div class="main_box2395_head">
-                <p>记住密码</p>
+                <a href="#">注册账号</a>
             </div>
             <div class="clearfix"></div>
             <div class="line"></div>

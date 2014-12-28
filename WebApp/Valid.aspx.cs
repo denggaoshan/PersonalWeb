@@ -18,7 +18,7 @@ namespace WebApp
             UserID = CheckUser(name, psw);
 
             //验证用户名密码：
-            if (UserID != null )
+            if (UserID != -1 )
             {
                 Response.Redirect("./Person.aspx", false);
             }
@@ -26,20 +26,27 @@ namespace WebApp
             {
                 Response.Redirect("ValidError.aspx", false); 
             }
+
         }
 
         private int CheckUser(string name,string psw)
         {
             DataLinkDataContext ctx = new DataLinkDataContext();
 
-            var query = from user in ctx.User
-                where user.username == "denggaoshan" && user.password == "5610201"
-                select user;
+            var query = from use in ctx.User
+                select use;
 
-            var cont = query.Count();
+            foreach (var user in query)
+            {
+                if (user.password == psw)
+                {
+                    return user.Id;
+                }
+            }
 
-            ctx.SubmitChanges();
-            return 1;
+            return -1;
+
+
         }
     }
 }
