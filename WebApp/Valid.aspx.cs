@@ -17,10 +17,14 @@ namespace WebApp
 
             UserID = Data.CheckUser(name, psw);
 
+            HttpCookie cookie = new HttpCookie("userid");
+            cookie.Value = UserID.ToString();
+            Response.AppendCookie(cookie);
+
             //验证用户名密码：
             if (UserID != -1 )
             {
-                Response.Redirect("./Person.aspx?type=land&userid="+UserID, true);
+                Response.Redirect("./Person.aspx?type=land", true);
             }
             else
             {

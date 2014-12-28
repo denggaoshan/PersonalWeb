@@ -16,26 +16,17 @@ namespace WebApp
         {
             var type = Request.QueryString["type"];
 
-            if (type == null )
+            var httpCookie = Request.Cookies["userid"];
+            if (httpCookie != null)
+            {
+                var userid = httpCookie.Value;
+                id = int.Parse(userid);
+                LoadInformationByID(id);
+            }else if (type == null )
             {
                 Response.Redirect("ValidError.aspx", true);
             }
-
-            if (type == "land")
-            {
-                var val = Request.QueryString["userid"];
-                if (val == null)
-                {
-                    Response.Redirect("ValidError.aspx", true);
-                }
-                else
-                {
-                    int.TryParse(val, out id);
-                    LoadInformationByID(id);
-                    return;
-                }
-            }
-
+            
             if (type == "modified")
             {
                 var name = Request.QueryString["name"];

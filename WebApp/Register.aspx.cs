@@ -26,7 +26,11 @@ namespace WebApp
             else
             {
                 int id = Data.AddUser(username, password);
-                Response.Redirect("Person.aspx?type=land&userid="+id,true);
+                HttpCookie cookie = new HttpCookie("userid");
+                cookie.Value = id.ToString();
+                Response.AppendCookie(cookie);
+
+                Response.Redirect("Person.aspx",true);
             }
         }
     }
