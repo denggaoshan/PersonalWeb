@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -85,7 +86,37 @@ namespace WebApp
         /// <returns>如果注册成功，返回用户的ID，否则返回-1</returns>
         public static int AddUser(string name,string psw)
         {
-            return -1;
+            Random rand = new Random();
+
+            int newid;
+            do
+            {
+                newid = rand.Next();
+            } while (null != GetUserById(newid));
+
+
+            DataLinkDataContext ctx = new DataLinkDataContext();
+            
+            User user = new User();
+
+            user.Id = newid;
+            user.username = name;
+            user.password = psw;
+            ctx.User.InsertOnSubmit(user);
+
+            UserInfo userInfo = new UserInfo();
+            userInfo.Id = newid;
+            userInfo.name = "未填写";
+            userInfo.email = "未填写";
+            userInfo.address = "未填写";
+            userInfo.phone = "未填写";
+            userInfo.lastIP = "127.0.0.1";
+            userInfo.lastTime = "2014-12-28";
+            ctx.UserInfo.InsertOnSubmit(userInfo);
+
+            ctx.SubmitChanges();
+
+            return newid;
         }
     }
 }

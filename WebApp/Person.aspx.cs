@@ -13,7 +13,6 @@ namespace WebApp
         private int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-         
             var val = Request.QueryString["userid"];
             if (val == null)
             {

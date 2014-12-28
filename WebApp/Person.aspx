@@ -26,7 +26,7 @@
         <div class="left">
           <img src="./img/empty.jpg"/>
           <p>上次登陆时间：<%=userinfo.lastTime %></p>
-          <p>上次登陆IP: <%=userinfo.lastIP %>></p>
+          <p>上次登陆IP: <%=userinfo.lastIP %></p>
           <p>总计访问次数：1次</p>
           <p>当前停留时间：10s</p>
         </div>

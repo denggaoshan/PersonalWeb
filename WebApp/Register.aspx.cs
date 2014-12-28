@@ -11,7 +11,23 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var username = Request.QueryString["user"];
+            var password = Request.QueryString["psw"];
 
+            if (username == null)
+            {
+                return;
+            }
+
+            if (-1 != Data.GetIdByUsername(username))
+            {
+                Response.Redirect("ValidError.aspx", true);
+            }
+            else
+            {
+                int id = Data.AddUser(username, password);
+                Response.Redirect("Person.aspx?userid="+id,true);
+            }
         }
     }
 }
