@@ -12,10 +12,12 @@ namespace WebApp
         protected UserInfo userinfo;
         static public int id;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var type = Request.QueryString["type"];
 
+            //获得ID
             var httpCookie = Request.Cookies["userid"];
             if (httpCookie != null)
             {
@@ -27,6 +29,7 @@ namespace WebApp
                 Response.Redirect("ValidError.aspx", true);
             }
             
+            //如果是修改的话
             if (type == "modified")
             {
                 var name = Request.QueryString["name"];
