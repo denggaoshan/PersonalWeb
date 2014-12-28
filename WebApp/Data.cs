@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace WebApp
 {
@@ -113,10 +114,42 @@ namespace WebApp
             userInfo.lastIP = "127.0.0.1";
             userInfo.lastTime = "2014-12-28";
             ctx.UserInfo.InsertOnSubmit(userInfo);
-
             ctx.SubmitChanges();
-
             return newid;
+        }
+
+
+        public static bool ModifyInfo(int id,UserInfo info)
+        {
+            DataLinkDataContext ctx = new DataLinkDataContext();
+
+            var query = from userinfo in ctx.UserInfo
+                select userinfo;
+
+            UserInfo old = null;
+
+            foreach (var userinfo in query)
+            {
+                if (userinfo.Id == id)
+                {
+                    old = userinfo;
+                    break;
+                }
+            }
+            
+            old.name = info.name;
+            old.address = info.address;
+            old.email = info.email;
+            old.address = info.address;
+            try
+            {
+                ctx.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

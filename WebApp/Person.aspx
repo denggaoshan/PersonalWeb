@@ -32,11 +32,12 @@
         </div>
         
         <div class="right">
-          <form id="personInfo" action="#" method="get">
+          <form id="personInfo" action="./Person.aspx" method="get">
               <p>姓名</p><input name="name" value="<%=userinfo.name %>"/>
                <p>电子邮箱</p><input name="email"  value="<%=userinfo.email %>"/>
                <p>手机</p><input name="phone" value="<%=userinfo.phone %>"/>
                <p>常住地</p><input name="address" value="<%=userinfo.address %>"/>
+              <input name="type" hidden="hidden" value="modified"/>
                <p><button>修改</button></p>
           </form>
         </div>

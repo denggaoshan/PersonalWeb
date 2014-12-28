@@ -20,7 +20,7 @@ namespace WebApp
             //验证用户名密码：
             if (UserID != -1 )
             {
-                Response.Redirect("./Person.aspx?userid="+UserID, true);
+                Response.Redirect("./Person.aspx?type=land&userid="+UserID, true);
             }
             else
             {
