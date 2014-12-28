@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
    <header>
-       <strong>XXX,欢迎</strong>
+       <strong>欢迎</strong>
    </header>
     
     <nav>

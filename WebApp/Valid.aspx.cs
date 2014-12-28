@@ -15,38 +15,19 @@ namespace WebApp
             var name = Request.QueryString["user"];
             var psw = Request.QueryString["psw"];
 
-            UserID = CheckUser(name, psw);
+            UserID = Data.CheckUser(name, psw);
 
             //验证用户名密码：
             if (UserID != -1 )
             {
-                Response.Redirect("./Person.aspx", false);
+                Response.Redirect("./Person.aspx?userid="+UserID, true);
             }
             else
             {
-                Response.Redirect("ValidError.aspx", false); 
+                Response.Redirect("ValidError.aspx", true); 
             }
 
         }
 
-        private int CheckUser(string name,string psw)
-        {
-            DataLinkDataContext ctx = new DataLinkDataContext();
-
-            var query = from use in ctx.User
-                select use;
-
-            foreach (var user in query)
-            {
-                if (user.password == psw)
-                {
-                    return user.Id;
-                }
-            }
-
-            return -1;
-
-
-        }
     }
 }

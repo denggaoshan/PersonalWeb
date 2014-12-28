@@ -13,9 +13,17 @@
 <body>
     <div class="wrapper">
         <div class="head_logo">用户注册</div>
+
         <div class="main_box2395">
-            <p>用户名</p><input/>
-            <p>密码</p><input/>
+            <form id="login" action="./Register.aspx" method="get">
+                 <p>用户名</p><input id="user" name="user"/>
+                <p>密码</p><input type="password" id="psw" name="psw"/>
+                 <div class="clearfix"></div>
+                 <div class="line"></div>
+                <button class="bt">确定</button>
+             </form>
+            <br/>
+                    <a href="Login.aspx">返回登陆界面</a>
         </div>
     </div>
   
