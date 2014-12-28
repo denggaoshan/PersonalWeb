@@ -26,7 +26,7 @@ namespace WebApp
             else
             {
                 int id = Data.AddUser(username, password);
-                Response.Redirect("Person.aspx?userid="+id,true);
+                Response.Redirect("Person.aspx?type=land&userid="+id,true);
             }
         }
     }

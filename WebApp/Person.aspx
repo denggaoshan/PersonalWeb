@@ -17,7 +17,7 @@
     
     <nav>
         <ul>
-           <li><a href="./Person.aspx">用户信息</a></li>
+           <li><a href="./Person.aspx?type=land&userid=<%=id%>" >用户信息</a></li>
             <li><a href="./UploadFile.aspx">我的文件</a></li>
         </ul>
     </nav>
