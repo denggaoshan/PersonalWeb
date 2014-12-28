@@ -420,11 +420,11 @@ namespace WebApp
 		
 		private int _Id;
 		
-		private string _userID;
+		private int _userID;
 		
 		private string _fileName;
 		
-		private System.Data.Linq.Binary _fileContent;
+		private string _filePath;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
@@ -432,12 +432,12 @@ namespace WebApp
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnuserIDChanging(string value);
+    partial void OnuserIDChanging(int value);
     partial void OnuserIDChanged();
     partial void OnfileNameChanging(string value);
     partial void OnfileNameChanged();
-    partial void OnfileContentChanging(System.Data.Linq.Binary value);
-    partial void OnfileContentChanged();
+    partial void OnfilePathChanging(string value);
+    partial void OnfilePathChanged();
     #endregion
 		
 		public File()
@@ -465,8 +465,8 @@ namespace WebApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userID", DbType="NChar(10)")]
-		public string userID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userID", DbType="Int NOT NULL")]
+		public int userID
 		{
 			get
 			{
@@ -485,7 +485,7 @@ namespace WebApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileName", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string fileName
 		{
 			get
@@ -505,22 +505,22 @@ namespace WebApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileContent", DbType="VarBinary(50)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary fileContent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_filePath", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string filePath
 		{
 			get
 			{
-				return this._fileContent;
+				return this._filePath;
 			}
 			set
 			{
-				if ((this._fileContent != value))
+				if ((this._filePath != value))
 				{
-					this.OnfileContentChanging(value);
+					this.OnfilePathChanging(value);
 					this.SendPropertyChanging();
-					this._fileContent = value;
-					this.SendPropertyChanged("fileContent");
-					this.OnfileContentChanged();
+					this._filePath = value;
+					this.SendPropertyChanged("filePath");
+					this.OnfilePathChanged();
 				}
 			}
 		}

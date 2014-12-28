@@ -21,9 +21,9 @@
   <Table Name="dbo.[File]" Member="File">
     <Type Name="File">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="userID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="fileName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="fileContent" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="filePath" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

@@ -11,6 +11,10 @@ namespace WebApp
     {
         protected int id;
         protected UserInfo userinfo;
+
+
+        protected string fileList;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var httpCookie = Request.Cookies["userid"];
@@ -24,6 +28,29 @@ namespace WebApp
             {
                 Response.Redirect("ValidError.aspx", true); 
             }
+
+            List<string> allfile = Data.GetAllFile(id);
+            CreateFilelist(allfile);
+        }
+
+        protected void CreateFilelist(List<string> allfile )
+        {
+            foreach (var file in allfile)
+            {
+                string tmp ="<li>"+file+"</li>";
+                fileList = fileList + tmp;
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+            string filename = FileUpload1.FileName;
+
+            var path = Data.AddFile(id, filename);
+
+            FileUpload1.PostedFile.SaveAs(path);
+
         }
     }
 }

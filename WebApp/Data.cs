@@ -151,5 +151,49 @@ namespace WebApp
             }
             return true;
         }
+
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="filename"></param>
+        /// <returns>返回为该文件分配的路径</returns>
+        public static string AddFile(int userId,string filename)
+        {
+            Random rand = new Random();
+
+            string path = HttpContext.Current.Server.MapPath("AllFile");
+            path = path + "\\" + filename;
+
+            DataLinkDataContext ctx = new DataLinkDataContext();
+
+            File file = new File();
+            file.Id = rand.Next();
+            file.userID = userId;
+            file.fileName = filename;
+            file.filePath = path;
+            ctx.File.InsertOnSubmit(file);
+            ctx.SubmitChanges();
+            return path;
+        }
+
+
+        public static List<string> GetAllFile(int userid)
+        {
+            List<string> result=new List<string>();
+            DataLinkDataContext ctx = new DataLinkDataContext();
+
+            var query = from file in ctx.File
+                        select file;
+
+            foreach (var file in query)
+            {
+                if (file.userID == userid)
+                {
+                    result.Add(file.fileName);
+                }
+            }
+            return result;
+        }
     }
 }
