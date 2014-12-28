@@ -29,7 +29,6 @@ namespace WebApp
                 HttpCookie cookie = new HttpCookie("userid");
                 cookie.Value = id.ToString();
                 Response.AppendCookie(cookie);
-
                 Response.Redirect("Person.aspx",true);
             }
         }

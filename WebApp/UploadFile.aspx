@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadFile.aspx.cs" Inherits="WebApp.UploadFile" %>
+<%@ Import Namespace="WebApp" %>
 
 
 <!DOCTYPE html>
@@ -13,7 +14,8 @@
 <body>
     <form id="form1" runat="server">
    <header>
-       <strong>欢迎</strong>
+       <strong><%=userinfo.name%>,欢迎</strong>
+       <a href="./Login.aspx">退出登录</a>
    </header>
     
     <nav>
