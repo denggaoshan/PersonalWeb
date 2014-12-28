@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Services.Description;
 
@@ -77,6 +78,34 @@ namespace WebApp
                 }
             }
             return -1;
+        }
+
+
+        public static int LandingRecord(int id,string ip)
+        {
+            DataLinkDataContext ctx = new DataLinkDataContext();
+
+            UserInfo info = null;
+
+            var query = from use in ctx.UserInfo
+                        select use;
+
+            foreach (var user in query)
+            {
+                if (user.Id == id)
+                {
+                    info = user;
+                }
+            }
+            if (info != null)
+            {
+                info.lastIP = ip;
+                info.landTimes += 1;
+                ctx.SubmitChanges();
+                if (info.landTimes != null) return info.landTimes.Value;
+            }
+            return -1;
+
         }
 
         /// <summary>
@@ -167,6 +196,15 @@ namespace WebApp
 
             DataLinkDataContext ctx = new DataLinkDataContext();
 
+            var query = from fi in ctx.File
+                select fi;
+
+            foreach (var fi in query)
+            {
+                if (fi.filePath == path)
+                    return null;
+            }
+
             File file = new File();
             file.Id = rand.Next();
             file.userID = userId;
@@ -177,7 +215,11 @@ namespace WebApp
             return path;
         }
 
-
+        /// <summary>
+        /// 返回属于该用户的所有的文件
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
         public static List<string> GetAllFile(int userid)
         {
             List<string> result=new List<string>();

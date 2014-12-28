@@ -12,11 +12,10 @@ namespace WebApp
         protected UserInfo userinfo;
         static public int id;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             var type = Request.QueryString["type"];
-
+            
             //获得ID
             var httpCookie = Request.Cookies["userid"];
             if (httpCookie != null)
@@ -50,7 +49,9 @@ namespace WebApp
 
         private void LoadInformationByID(int id)
         {
+            string ip = System.Web.HttpContext.Current.Request.UserHostAddress;
             userinfo = Data.GetUserById(id);
+            Data.LandingRecord(id, ip);
         }
     }
 }

@@ -7,23 +7,24 @@
       <Column Name="password" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.UserInfo" Member="UserInfo">
-    <Type Name="UserInfo">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="lastIP" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="lastTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.[File]" Member="File">
     <Type Name="File">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="filePath" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo" Member="UserInfo">
+    <Type Name="UserInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastIP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="landTimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

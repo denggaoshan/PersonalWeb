@@ -49,8 +49,12 @@ namespace WebApp
 
             var path = Data.AddFile(id, filename);
 
-            FileUpload1.PostedFile.SaveAs(path);
+            if (path != null)
+            {
+                FileUpload1.PostedFile.SaveAs(path);
+            }
 
+            Response.Redirect("Person.aspx", true); 
         }
     }
 }
